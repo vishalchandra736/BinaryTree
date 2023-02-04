@@ -29,6 +29,20 @@ public class BinarySearch {
         }
         return root;
     }
+
+    public void inorder() {
+        inorder(root);
+    }
+
+    private void inorder(Node root) {
+        if(root == null) {
+            return;
+        }
+        inorder(root.left);
+        System.out.print(root.data + " ");
+        inorder(root.right);
+    }
+
     public static void main(String[] args) {
         BinarySearch binarySearch = new BinarySearch();
         binarySearch.insert(55);
@@ -38,6 +52,7 @@ public class BinarySearch {
         binarySearch.insert(6);
         binarySearch.insert(99);
         binarySearch.insert(77);
+        binarySearch.inorder();
     }
 
 }
